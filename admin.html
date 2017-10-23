@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Админ-панель</title>
+		<meta content="width=device-width, initial-scale=1" name="viewport">
+		<meta content="ie=edge" http-equiv="x-ua-compatible"><!-- Chrome, Firefox OS and Opera -->
+		<meta name="theme-color" content="#000"><!-- Windows Phone -->
+		<meta name="msapplication-navbutton-color" content="#000"><!-- iOS Safari -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+		<link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+		<link rel="manifest" href="manifest.json">
+		<meta name="theme-color" content="#ffffff">
+		<link rel="stylesheet" href="./assets/css/foundation.css">
+		<link rel="stylesheet" href="./assets/css/app.css"><!--[if lt IE 9]>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+	</head>
+	<body><!--[if lt IE 9]>
+<p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a></p>
+<![endif]-->
+		<div class="preloader preloader--no-js">
+			<div class="preloader__wrapper"><span class="preloader__progress">0</span>
+				<svg class="preloader__waves" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 80 95.113">
+					<g class="preloader__wave preloader__wave--1">
+						<path fill="none" stroke-miterlimit="10" d="M0 38.005c6.663 0 6.663 7.8 13.327 7.8 6.665 0 6.665-7.8 13.33-7.8 6.667 0 6.667 7.8 13.334 7.8s6.667-7.8 13.332-7.8c6.67 0 6.67 7.8 13.34 7.8s6.668-7.8 13.338-7.8"></path>
+					</g>
+					<g class="preloader__wave preloader__wave--2">
+						<path fill="none" stroke-miterlimit="10" d="M0 61.684c6.663 0 6.663 7.8 13.327 7.8 6.665 0 6.665-7.8 13.33-7.8 6.667 0 6.667 7.8 13.334 7.8s6.667-7.8 13.332-7.8c6.67 0 6.67 7.8 13.34 7.8s6.668-7.8 13.338-7.8"></path>
+					</g>
+					<g class="preloader__wave preloader__wave--3">
+						<path fill="none" stroke-miterlimit="10" d="M0 85.362c6.663 0 6.663 7.8 13.327 7.8 6.665 0 6.665-7.8 13.33-7.8 6.667 0 6.667 7.8 13.334 7.8s6.667-7.8 13.332-7.8c6.67 0 6.67 7.8 13.34 7.8s6.668-7.8 13.338-7.8"></path>
+					</g>
+				</svg>
+			</div>
+		</div>
+		<div class="admin">
+			<div class="admin__header">
+				<h1 class="admin__header-title">Панель администрирования</h1><a class="admin__header-link" href="/">Вернуться на сайт</a>
+			</div>
+			<input class="admin__input-radio" id="tab-1" type="radio" name="tab" checked>
+			<input class="admin__input-radio" id="tab-2" type="radio" name="tab">
+			<input class="admin__input-radio" id="tab-3" type="radio" name="tab">
+			<ul class="admin__tabs-controls">
+				<li class="admin__control-item">
+					<label class="admin__control-link" for="tab-1">Обо мне</label>
+				</li>
+				<li class="admin__control-item">
+					<label class="admin__control-link" for="tab-2">Блог</label>
+				</li>
+				<li class="admin__control-item">
+					<label class="admin__control-link" for="tab-3">Мои работы</label>
+				</li>
+			</ul>
+			<ul class="admin__tabs-list">
+				<li class="admin__tab" data-tab="1">
+					<h2 class="admin__tab-title">Страница «Обо мне»
+						<form class="admin__form-skills" id="form-skills" method="POST">
+							<div class="admin__skills-group">
+								<h3 class="admin__skills-title">Frontend</h3>
+								<label class="admin__skills-label" for="field-HTML5"><span>HTML5</span>
+									<input class="admin__skills-input" type="text" id="field-HTML5" name="HTML5" data-group="Frontend" data-error-content="Введите число" min="0" max="100" value="90" required>%
+								</label><br>
+								<label class="admin__skills-label" for="field-CSS3"><span>CSS3</span>
+									<input class="admin__skills-input" type="text" id="field-CSS3" name="CSS3" data-group="Frontend" data-error-content="Введите число" min="0" max="100" value="90" required>%
+								</label><br>
+								<label class="admin__skills-label" for="field-JavaScript  &amp; jQuery"><span>JavaScript  &amp; jQuery</span>
+									<input class="admin__skills-input" type="text" id="field-JavaScript  &amp; jQuery" name="JavaScript  &amp; jQuery" data-group="Frontend" data-error-content="Введите число" min="0" max="100" value="60" required>%
+								</label><br>
+							</div>
+							<div class="admin__skills-group">
+								<h3 class="admin__skills-title">Backend</h3>
+								<label class="admin__skills-label" for="field-PHP"><span>PHP</span>
+									<input class="admin__skills-input" type="text" id="field-PHP" name="PHP" data-group="Backend" data-error-content="Введите число" min="0" max="100" value="60" required>%
+								</label><br>
+								<label class="admin__skills-label" for="field-mySQL"><span>mySQL</span>
+									<input class="admin__skills-input" type="text" id="field-mySQL" name="mySQL" data-group="Backend" data-error-content="Введите число" min="0" max="100" value="60" required>%
+								</label><br>
+								<label class="admin__skills-label" for="field-Node.js  &amp; npm"><span>Node.js  &amp; npm</span>
+									<input class="admin__skills-input" type="text" id="field-Node.js  &amp; npm" name="Node.js  &amp; npm" data-group="Backend" data-error-content="Введите число" min="0" max="100" value="60" required>%
+								</label><br>
+								<label class="admin__skills-label" for="field-Mongo.db"><span>Mongo.db</span>
+									<input class="admin__skills-input" type="text" id="field-Mongo.db" name="Mongo.db" data-group="Backend" data-error-content="Введите число" min="0" max="100" value="60" required>%
+								</label><br>
+							</div>
+							<div class="admin__skills-group">
+								<h3 class="admin__skills-title">WorkFlow</h3>
+								<label class="admin__skills-label" for="field-Git"><span>Git</span>
+									<input class="admin__skills-input" type="text" id="field-Git" name="Git" data-group="WorkFlow" data-error-content="Введите число" min="0" max="100" value="60" required>%
+								</label><br>
+								<label class="admin__skills-label" for="field-Gulp"><span>Gulp</span>
+									<input class="admin__skills-input" type="text" id="field-Gulp" name="Gulp" data-group="WorkFlow" data-error-content="Введите число" min="0" max="100" value="60" required>%
+								</label><br>
+								<label class="admin__skills-label" for="field-Bower"><span>Bower</span>
+									<input class="admin__skills-input" type="text" id="field-Bower" name="Bower" data-group="WorkFlow" data-error-content="Введите число" min="0" max="100" value="60" required>%
+								</label><br>
+							</div>
+							<input class="admin__submit" id="skills-submit" type="submit" value="Сохранить">
+						</form>
+					</h2>
+				</li>
+				<li class="admin__tab" data-tab="2">
+					<h2 class="admin__tab-title">Страница «Блог»
+						<form class="admin__form-blog" id="form-post" method="POST">
+							<h3 class="admin__form-title">Добавить запись</h3>
+							<p class="admin__input-wrap">
+								<input class="admin__input-blog" type="text" name="postName" placeholder="Название" data-error-content="Введите название">
+							</p>
+							<p class="admin__input-wrap">
+								<input class="admin__input-blog" type="text" name="postDate" placeholder="Дата" data-error-content="Введите дату">
+							</p>
+							<p class="admin__input-wrap">
+								<textarea class="admin__input-blog" name="postBody" cols="30" rows="10" placeholder="Содержание" data-error-content="Введите текст"></textarea>
+							</p>
+							<input class="admin__submit" id="post-submit" type="submit" value="Добавить">
+						</form>
+					</h2>
+				</li>
+				<li class="admin__tab" data-tab="3">
+					<h2 class="admin__tab-title">Страница «Мои работы»
+						<form class="admin__form-works" id="form-works" method="POST" enctype="multipart/form-data">
+							<h3 class="admin__form-title">Добавить работу</h3>
+							<p class="admin__input-wrap">
+								<input class="admin__input-works" type="text" name="workName" placeholder="Название проекта" data-error-content="Введите название" required>
+							</p>
+							<p class="admin__input-wrap">
+								<input class="admin__input-works" type="text" name="workTech" placeholder="Технологии" data-error-content="Введите технологии" required>
+							</p>
+							<p class="admin__input-wrap">
+								<input class="admin__input-works" type="text" name="workLink" placeholder="Ссылка" data-error-content="Введите ссылку" required>
+							</p>
+							<p class="admin__input-wrap">
+								<label class="admin__label-file" for="admin__field-file">Загрузить картинку
+									<input class="admin__input-works" type="file" name="workFile" id="admin__field-file" data-error-content="Загрузить картинку" required>
+								</label>
+							</p>
+							<input class="admin__submit" id="works-submit" type="submit" value="Добавить">
+						</form>
+					</h2>
+				</li>
+			</ul>
+		</div>
+		<script src="./assets/js/foundation.js"></script>
+		<script src="./assets/js/admin.js"></script>
+	</body>
+</html>
